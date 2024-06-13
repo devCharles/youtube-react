@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 // export default function Video(props) {
 //   return (
 //     <article className="video-card">
@@ -26,16 +28,51 @@
 // }
 
 export default function Video({ image, title, channel }) {
+  // if (!channel) {
+  //   return (
+  //     <article>
+  //       <p>Incompleto</p>
+  //     </article>
+  //   );
+  // }
+
+  // const articleClassnames =
+  //   "video-card" + (channel === "Marques Brownlee" ? " special" : "");
+
+  // let articleClassnames = ["video-card"];
+
+  // if (channel === "Marques Brownlee") {
+  //   articleClassnames.push("special");
+  // }
+
   return (
-    <article className="video-card">
+    <article
+      className={clsx("video-card", "otra", {
+        // special: channel === "Marques Brownlee",
+        special: channel === "Marques Brownlee",
+      })}
+    >
       <img src={image} alt="" />
       <footer>
-        <img
-          src={`https://api.dicebear.com/8.x/identicon/svg?seed=${channel}`}
-          alt=""
-        />
+        {channel && (
+          <img
+            src={`https://api.dicebear.com/8.x/identicon/svg?seed=${channel}`}
+            alt=""
+          />
+        )}
+        {!channel && <span> 🤷 </span>}
+
+        {/* {channel ? (
+          <img
+            src={`https://api.dicebear.com/8.x/identicon/svg?seed=${channel}`}
+            alt=""
+          />
+        ) : (
+          <span> 🤷 </span>
+        )} */}
+
         <p className="video-card-title">{title}</p>
-        <p className="video-card-channel">{channel}</p>
+        <p className="video-card-channel">{channel || "UNKNOWN"}</p>
       </footer>
     </article>
   );

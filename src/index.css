@@ -1,15 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
+/* body {
   background-color: #0f0f0f;
   color: #f0f0f0;
-}
+} */
 
-#main-layout {
+/* #main-layout {
   width: 100%;
   min-height: 100dvh;
   padding: 1rem;
@@ -17,22 +21,22 @@ body {
   display: grid;
   grid-template-columns: 20% 1fr;
   grid-template-rows: 3.2rem 1fr;
-}
+} */
 
-#navbar {
+/* #navbar {
   grid-column: 1 / 3;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
+} */
 
-#logo {
+/* #logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.3rem;
   padding-left: 1rem;
-}
+} */
 
 #search-container {
   display: flex;
@@ -131,4 +135,8 @@ body {
 .video-card-title,
 .video-card-channel {
   grid-column: 2 / 3;
+}
+
+.special {
+  border: 1px solid red;
 }
